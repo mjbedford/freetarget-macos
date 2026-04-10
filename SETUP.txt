@@ -1,0 +1,44 @@
+freETarget macOS — Setup Instructions
+======================================
+
+Prerequisites
+-------------
+  - Node.js 18+ (https://nodejs.org)
+  - Xcode Command Line Tools: xcode-select --install
+  - Python 3 (bundled with macOS or via brew install python)
+
+Install
+-------
+  cd freeTarget-macos
+  npm install
+
+  This rebuilds better-sqlite3 and serialport for your Electron version.
+  It may take a few minutes on first run.
+
+Run in development (with hot reload)
+-------------------------------------
+  npm run dev
+
+Build and package a .dmg
+-------------------------
+  npm run dist
+  # Output goes to release/
+
+USB connection
+--------------
+  The target device appears as /dev/cu.usbmodem* or /dev/cu.usbserial* on macOS.
+  Use the Settings panel to select the right port and baud rate (default 115200).
+
+TCP/IP connection
+-----------------
+  ESP32-based targets use TCP. Default address: 192.168.10.9:1090
+  Connect your Mac to the target's Wi-Fi network first (SSID starts with "FET-").
+
+First use
+---------
+  1. Click Settings (top of left sidebar) and enter your name.
+  2. Connect to the device (USB or TCP).
+  3. Select a course of fire (Rifle Practice, Pistol Match, etc.).
+  4. Click Start Session.
+  5. Shots appear on the target canvas as the device detects them.
+  6. Click Save Session when finished.
