@@ -65,8 +65,8 @@ function drawTarget(
       ctx.stroke()
     }
 
-    // Ring number label (north position)
-    if (rPx > 8) {
+    // Ring number label (north position) — X ring has no label (still scores 10)
+    if (rPx > 8 && ringNum <= 10) {
       const nextR = i + 1 < target.rings.length ? (target.rings[i + 1] / 2) * scale : 0
       const diff = rPx - nextR
       if (diff > 6) {
